@@ -1,0 +1,34 @@
+@prefix ab:    <http://learningsparql.com/ns/certification#> .
+@prefix s:     <http://learningsparql.com/ns/data#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+s:i0a1  ab:category  "Network" ;
+        ab:date      "October" ;
+        ab:name      "Cisco" ;
+        ab:price     "190000" ;
+        ab:takenby   "http://learningsparql.com/ns/data#take35" .
+
+
+s:i001  ab:category  "English" ;
+        ab:date      "August" ;
+        ab:name      "Toefl" ;
+        ab:price     "40000" ;
+        ab:takenby   "http://learningsparql.com/ns/data#take36" , "http://learningsparql.com/ns/data#take34" .
+
+s:i0a2  ab:category  "Network" ;
+        ab:date      "September" ;
+        ab:name      "CCNA" ;
+        ab:price     "250000" ;
+        ab:takenby   "http://learningsparql.com/ns/data#take36" .
+
+s:i0b1  ab:category  "IT" ;
+        ab:date      "October" ;
+        ab:name      "Java Language" ;
+        ab:price     "25000" ;
+        ab:takenby   "" .
+
+s:take35  ab:user  "Nando Rafi C" .
+
+s:take36  ab:user  "Asep Mul" .
+
+s:take34  ab:user  "Marcell Antonius" .

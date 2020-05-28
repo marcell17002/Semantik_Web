@@ -1,0 +1,71 @@
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: auto;
+    border-radius: 5px;
+    background-color:white;
+    margin-bottom: 10%;
+    padding-bottom: 10px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+  .img-left{
+    margin-right: 400px;
+  }
+  .container1 {
+    padding: 2px 16px;
+    
+  }
+  .footer{
+    padding: 25px;
+    background-color: #c1cade;
+    width: auto;
+    height: 100px;
+  }
+  .profile-top{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: #1b294a;
+  }
+  .profile-1{
+    background-color: #e6e6e6;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .profile-3{
+    background-color: #e6e6e6;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .profile-1{
+    background-color: #e6e6e6;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .form-update{
+    background-color: #e8e8e8;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+  .card-1{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    background-color: #e8e8e8;
+  }
+  .card-2{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    background-color: #e8e8e8;
+
+  }
