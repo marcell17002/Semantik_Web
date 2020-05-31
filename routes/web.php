@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Auth::routes();
 Route::get('/register/details', function (){
     return view('auth/registerDetail');
 })->middleware('auth');

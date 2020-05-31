@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Certification;
-use Illuminate\Support\Facades\Auth;
-use App\CertificationUser;
 
 class CertificationController extends Controller
 {
     public function index(){
-        $certifications = Certification::all();
-        return view('certification', ['certifications' => $certifications]);
+        $response = Http::get('http://localhost:8000/api/certification');
+
+        
+        return view('certification', ['certifications' => $response]);
     }
 
     public function show($url){

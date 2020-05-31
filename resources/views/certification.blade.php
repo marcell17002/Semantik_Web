@@ -26,13 +26,14 @@
 
         <div class ="container">
             <div class ="row">
+            @dd($certifications)
             @foreach ($certifications as $certification)
                 <div class="col-3">
                     <div class="card">
                         <img src={{asset('image/cisco.png')}} alt="Avatar" style="width:100%;height:50%;padding: 10px 10px;">
                         <div class="container1">
-                            <h4 style="text-align:center;border-top:2px;"><b>{{$certification->certif_name}}</b></h4> 
-                            <p style="text-align:center;">{{$certification->desc}}</p> 
+                            <h4 style="text-align:center;border-top:2px;"><b>{{$certification->judul}}</b></h4> 
+                            <p style="text-align:center;">$certification->desc</p> 
                             <a class="btn btn-primary" href="/certification/{{$certification->url}}" style="color : white; border-radius: 0px;width:100%; "> Apply </a>
                         </div>
                     </div>
