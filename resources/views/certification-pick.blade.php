@@ -15,25 +15,25 @@
     </head>
     <body>
         @include('includes.header')
-        
+        @foreach($details as $detail)
        <div class="container">
             <div class="row">
                 <div class="col-4">
                     <image src={{asset('image/cisco.png')}} style="widht: 16%; height: 16%; margin-top:30%;margin-left:5%;">
-                    <h3 style="text-align:center;margin-top:20%;padding-right:5%"> {{$details->company}} </h3>
-                    <h5 style="text-align:center;padding-right:5%;"> {{$details->desc}} </h5>
+                    <h3 style="text-align:center;margin-top:20%;padding-right:5%"> {{$detail->judul}} </h3>
+                    <h5 style="text-align:center;padding-right:5%;"> $detail->desc </h5>
                     <br>
                     <form action="" method="POST">
                     @csrf
-                        <input type="hidden" value="{{$details->url}}" name="url">
+                        <input type="hidden" value="#" name="url">
                         <button class="btn btn-primary" type="submit" style="color : white; border-radius: 10px; background-color: #1b294a;width:90%;margin-left:5%;"> Apply </button>
                     </form>
                     <a href="https://api.whatsapp.com/send?phone=62895401011469&text=Halo saya ingin mendaftar dalam sertifikasi ini!." class="float" target="_blank"><button class="btn btn-success" type="button" style="color : white; border-radius: 10px; background-color: #00ff44;width:90%;margin-left:5%; margin-top:5%;"> Contact via Whats App </button></a>
                 </div>
                 <div class="col-8">
-                    <h1 style="color : #1b294a; padding-top:10%;"> Judul </h1>
+                    <h1 style="color : #1b294a; padding-top:10%;"> {{$detail->judul}} </h1>
                     <br>
-                    <p style="text-align:justify;">{{$details->desc_detail}}</p>
+                    <p style="text-align:justify;">{{$detail->harga}}</p>
                 </div>
             </div>
         </div>
@@ -41,6 +41,7 @@
         <a href="https://api.whatsapp.com/send?phone=62895401011469&text=Halo saya ingin mendaftar dalam sertifikasi ini!." class="float" target="_blank">
             <i class="fa fa-whatsapp my-float"></i>
         </a>
+        @endforeach
        @include('includes/footer')
     </body>
 </html>

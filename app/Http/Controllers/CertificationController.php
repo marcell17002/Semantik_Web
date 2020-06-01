@@ -8,27 +8,59 @@ use Illuminate\Http\Request;
 class CertificationController extends Controller
 {
     public function index(){
-        $response = Http::get('http://localhost:8000/api/certification');
+        \EasyRdf_Namespace::set('ab', 'http://learningsparql.com/ns/certification#');
+        \EasyRdf_Namespace::set('s', 'http://learningsparql.com/ns/data#');
+        $sparql = new \EasyRdf_Sparql_Client('http://localhost:3030/certiv/sparql');
 
-        
-        return view('certification', ['certifications' => $response]);
+    $query = 'SELECT ?judul ?category ?tanggal ?harga ?link WHERE {'.
+        '?certif ab:name ?judul .'.
+          '?certif	ab:category ?category . ' .
+          '?certif ab:price ?harga . ' .
+          '?certif ab:date ?tanggal . ' .
+          '?certif ab:url ?link ' .
+    '}';
+
+        $result = $sparql->query($query);
+        return view('certification', ['certifications' => $result]);
     }
 
     public function show($url){
-        $certificationDetails = Certification::where('url', $url)->first(); //pakek first supaya bisa dipanggil tanpa foreach dan keluarnya cuman 1
+        \EasyRdf_Namespace::set('ab', 'http://learningsparql.com/ns/certification#');
+        \EasyRdf_Namespace::set('s', 'http://learningsparql.com/ns/data#');
 
-        return view('certification-pick' , ['details' => $certificationDetails]);
+        $sparql = new \EasyRdf_Sparql_Client('http://localhost:3030/certiv/sparql');
+
+        $query = 'SELECT ?certif ?judul ?category ?tanggal ?harga WHERE {'.
+            '?certif ab:url "'.$url.'" .'.
+            '?certif ab:name ?judul .'.
+              '?certif	ab:category ?category . ' .
+              '?certif ab:price ?harga . ' .
+              '?certif ab:date ?tanggal ' .
+        '}';
+        
+        $result = $sparql->query($query);
+
+        return view('certification-pick' , ['details' => $result]);
     }
 
-    public function userGotCertif(Request $data){
-        $user = Auth::user();
-        $certif = Certification::where('url', $data->url)->first();
-        $certifUser = new CertificationUser;
-
-        $certifUser->user_id = $user->id;
-        $certifUser->certif_id = $certif->certif_id;
-        $certifUser->save();
-
-        return redirect('/');
+    public function pencarian(Request $request){
+        \EasyRdf_Namespace::set('ab', 'http://learningsparql.com/ns/certification#');
+        \EasyRdf_Namespace::set('s', 'http://learningsparql.com/ns/data#');
+        $sparql = new \EasyRdf_Sparql_Client('http://localhost:3030/certiv/sparql');
+        
+        $judul = $request->judul;
+        
+        $query = 'SELECT ?judul ?category ?tanggal ?harga ?link WHERE {'.
+            '?certif ab:name "'.$judul.'" .'.
+            '?certif ab:name ?judul .'.
+              '?certif	ab:category ?category . ' .
+              '?certif ab:price ?harga . ' .
+              '?certif ab:url ?link . ' .
+              '?certif ab:date ?tanggal ' .
+        '}';
+        
+        $result = $sparql->query($query);
+        
+        return view('certification', ['certifications' => $result]);
     }
 }
