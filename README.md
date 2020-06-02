@@ -1,79 +1,66 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Certiv
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## About Certiv
+Certiv merupakan sebuah website yang bertujuan untuk menghadapai tantangan mea 2025 yang dimana tantangan dunia kerja tidak hanya masyarakat indonesia saja namun sudah mencapai asia tenggara. Untuk itu website ini hadir untuk mewadahi para pemilik lembaga sertifikasi dan generasi muda khususnya fresh graduate untuk sama-sama memiliki kesempatan mendapatkan sertifikasi. tentunya Semantik Web akan dimuat didalam Certiv untuk memudahkan anda mencari sertifikasi, skill atau keahlian lainnya untuk menunjang Indonesia Cerdas yang lebih baik!
 
-## About Laravel
+Find The Best Certification to Boost-Up your carreer.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Our Progress
+- [x] Build Apache Jena Fuseki Server.
+- [x] Desain Mockup for Website.
+- [x] User Interface with User Experience.
+- [x] Dataset (user.ttl).
+- [x] Query Select all data for certification page.
+- [x] Connected user Query for Search certification and related to. 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Our Dataset Schema
+![alt text](https://github.com/marcell17002/Semantik_Web/blob/master/data/schema.png?raw=true "Dataset Schema") 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Installation
+### Apache Jena Fuseki
+1. Download Apache Jena Fuseki in https://jena.apache.org/download/
+2. Install to your directory.
+3. run fuseki-server.bat
+4. Go to your browser, input http://127.0.0.1:3030/
 
-## Learning Laravel
+### Upload Dataset
+1. Go to http://127.0.0.1:3030/ after Apache Fuseki jena started
+2. klik manage dataset, and make a new one. 
+3. Enter Dataset name = certiv
+4. Choose Dataset type = Persistent
+5. Create dataset
+6. Upload data from dataset folder, select files user
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```bash
+Semantik_Web/data/data.ttl
+```
+7. Wait until upload data success
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## How To Start
+1. Clone git ini
+2. Jalankan command "composer install" di dalam folder Psikotest
+3. Buat file .env dengan meng-copy .env.example atau jalankan "cp .env.example .env"
+4. Jalankan command "php artisan key:generate"
+5. Buat database baru untuk diisi
+6. Edit line DB_DATABASE dengan nama database yang akan digunakan tanpa membuat table didalamnya
+7. Migrate database dengan menjalankan "php artisan migrate"
+8. Run the server
+```bash
+php artisan serve
+```
+9. Go to your favorite web browser, type  http://127.0.0.1:8000
+10. Good to go 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## How To Use
+### Search user data 
+1. After run the server ,  type  http://127.0.0.1:8000
+2. You can see our certiv 
+3. Also, you can find about certification by search name, category , price, periode in search bar
+4. Moreover, you can find what others have been done at "network" menu's , just type the name and you will see what others did
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+## About us 
+- Marcell Antonius 140810170034
+- Rafi Chandra     140810170037
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

@@ -21,19 +21,25 @@
                 <div class="col-4">
                     <image src={{asset('image/cisco.png')}} style="widht: 16%; height: 16%; margin-top:30%;margin-left:5%;">
                     <h3 style="text-align:center;margin-top:20%;padding-right:5%"> {{$detail->judul}} </h3>
-                    <h5 style="text-align:center;padding-right:5%;"> $detail->desc </h5>
+                    <h5 style="text-align:center;padding-right:5%;"> {{$detail->category}} </h5>
                     <br>
-                    <form action="" method="POST">
+                    <form action="" method="">
                     @csrf
                         <input type="hidden" value="#" name="url">
-                        <button class="btn btn-primary" type="submit" style="color : white; border-radius: 10px; background-color: #1b294a;width:90%;margin-left:5%;"> Apply </button>
+                        <a href="https://api.whatsapp.com/send?phone=62895401011469&text=Halo saya ingin mendaftar dalam sertifikasi ini!."  target="_blank">
+                        <button class="btn btn-primary"  style="color : white; border-radius: 10px; background-color: #1b294a;width:90%;margin-left:5%;"> Apply </button>
+                        </a>
                     </form>
-                    <a href="https://api.whatsapp.com/send?phone=62895401011469&text=Halo saya ingin mendaftar dalam sertifikasi ini!." class="float" target="_blank"><button class="btn btn-success" type="button" style="color : white; border-radius: 10px; background-color: #00ff44;width:90%;margin-left:5%; margin-top:5%;"> Contact via Whats App </button></a>
-                </div>
+                   </div>
                 <div class="col-8">
                     <h1 style="color : #1b294a; padding-top:10%;"> {{$detail->judul}} </h1>
                     <br>
-                    <p style="text-align:justify;">{{$detail->harga}}</p>
+                    <p style="text-align:justify;">Halo Fellas ! Wah saatnya kita memotivasi diri kita untuk menjadi lebih baik yuk!. Sudah bosan dan khawatir tentunya dengan masa dengan yang begitu-begitu saja atau berada pada ambang kekhawatiran?. Untuk menjawab itu semua , Ayo ikuti sertifikasi untuk menghadapi kekhawatiran berikut. Ikuti ujian sertifiasi {{$detail->judul}} pada bulan <b>{{$detail->tanggal}}</b> dan dapatkan sertifikasi mu , jika <span style="color:green">LOLOS</span> yaaa ! hihihihi</p>
+                    <br>
+                    <p style="text-align:justify;">Untuk menata masa depanmu , harganya cukup Rp.<span style="color:green"><b> {{$detail->harga}},00</b> </span> Saja, Murah bukannn? dan sangat sebanding dengan apa yang kamu harapkan kedepannya hihihihi!. Caranya juga cukup mudah, dan bila ada pertanyaanpun kamu bisa menghubungi melalui icon WA di pojok kanan bawah berikut ini yaa Fellasss ! </p>
+                    <br>
+                    <br>
+                    <h3 style="text-align:center"> Don't Miss it ! </p>
                 </div>
             </div>
         </div>

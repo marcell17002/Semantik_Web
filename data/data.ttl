@@ -6,32 +6,119 @@ s:i0a1  ab:category  "Network" ;
         ab:date      "October" ;
         ab:name      "Cisco" ;
         ab:price     "190000" ;
-        ab:takenby   "http://learningsparql.com/ns/data#take35" ;
         ab:url       "cisco" .
 
-s:take34  ab:user  "Marcell Antonius" .
-
-s:take35  ab:user  "Nando Rafi C" .
-
-s:i0b1  ab:category  "IT" ;
+s:i0b1  ab:category  "Code" ;
         ab:date      "October" ;
         ab:name      "Java Language" ;
         ab:price     "25000" ;
-        ab:takenby   "" ;
         ab:url       "java" .
 
 s:i0a2  ab:category  "Network" ;
         ab:date      "September" ;
         ab:name      "CCNA" ;
         ab:price     "250000" ;
-        ab:takenby   "http://learningsparql.com/ns/data#take36" ;
         ab:url       "ccna" .
-
-s:take36  ab:user  "Asep Mul" .
 
 s:i001  ab:category  "English" ;
         ab:date      "August" ;
         ab:name      "Toefl" ;
         ab:price     "40000" ;
-        ab:takenby   "http://learningsparql.com/ns/data#take34" , "http://learningsparql.com/ns/data#take36" ;
         ab:url       "toefl" .
+
+s:i002  ab:category  "English" ;
+        ab:date      "November" ;
+        ab:name      "IELTS" ;
+        ab:price     "56000" ;
+        ab:url       "ielts" .
+
+s:i003  ab:category  "Code" ;
+        ab:date      "January" ;
+        ab:name      "Kotlin : Front End " ;
+        ab:price     "10000" ;
+        ab:url       "kotlin" .
+
+s:i004  ab:category  "Code" ;
+        ab:date      "January" ;
+        ab:name      "GoLang" ;
+        ab:price     "FREE" ;
+        ab:url       "golang" .
+
+s:i005  ab:category  "Business" ;
+        ab:date      "March" ;
+        ab:name      "Online Business" ;
+        ab:price     "FREE" ;
+        ab:url       "Business" .
+        
+s:i006  ab:category  "Business" ;
+        ab:date      "March" ;
+        ab:name      "Responsfull E-commerce" ;
+        ab:price     "1000000" ;
+        ab:url       "e-commerce" .
+
+#takenby
+s:i001    ab:takenby  "Marcell Antonius" .
+s:i001    ab:takenby  "Nando Rafi C" .
+s:i001    ab:takenby  "Dimas Satria" .
+s:i001    ab:takenby  "Fadhil Nugroho" .
+s:i001    ab:takenby  "Ucok" .
+
+
+s:i002    ab:takenby  "Jessica" .
+s:i002    ab:takenby  "Marcell Antonius" .
+s:i002    ab:takenby  "Nando Rafi C" .
+s:i002    ab:takenby  "Hans Irawan" .
+
+
+s:i003    ab:takenby  "Marcell Antonius" .
+s:i003    ab:takenby  "Ucok" .
+s:i003    ab:takenby  "Nando Rafi C" .
+
+
+s:i004    ab:takenby  "Marcell Antonius" .
+
+s:i005    ab:takenby  "Ucok" .
+s:i005    ab:takenby  "Nando Rafi C" .
+
+s:i006    ab:takenby  "Marcell Antonius" .
+s:i006    ab:takenby  "Nando Rafi C" .
+
+s:i0a2    ab:takenby  "Mutia Karimah" .
+s:i0a2    ab:takenby  "Dede Kurniasih" .
+s:i0a2    ab:takenby  "Marcell Antonius" .
+s:i0a2    ab:takenby  "Ibnu Kusuma" .
+
+s:i0b1    ab:takenby  "Hans Irawan" .
+s:i0b1    ab:takenby  "Marcell Antonius" .
+s:i0b1    ab:takenby  "Rafi Chandra" .
+s:i0b1    ab:takenby  "Tiffany Valeria" .
+
+s:i0a1    ab:takenby  "Verina Putri" .
+s:i0a1    ab:takenby  "Dicky Wijaya" .
+s:i0a1    ab:takenby  "Dani Gunawan" .
+s:i0a1    ab:takenby  "Hans Irawan" .
+
+
+#related
+#Business
+s:i005 ab:related s:i006 .
+s:i006 ab:related s:i005 .
+
+#Code
+s:i003 ab:related s:i004.
+s:i003 ab:related s:i0b1.
+s:i004 ab:related s:i003.
+s:i004 ab:related s:i0b1.
+s:i0b1 ab:related s:i003.
+s:i0b1 ab:related s:i004.
+
+#Network
+s:i0a1 ab:related s:i0a2.
+s:i0a2 ab:related s:i0a1.
+
+#English
+s:i001 ab:related s:i002.
+s:i002 ab:related s:i001.
+
+
+
