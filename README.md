@@ -39,7 +39,7 @@ Semantik_Web/data/data.ttl
 
 ## How To Start
 1. Clone git ini
-2. Jalankan command "composer install" di dalam folder Psikotest
+2. Jalankan command "composer install" di dalam folder ini
 3. Buat file .env dengan meng-copy .env.example atau jalankan "cp .env.example .env"
 4. Jalankan command "php artisan key:generate"
 5. Buat database baru untuk diisi

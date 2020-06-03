@@ -18,7 +18,7 @@
                         <a href="/certification">Certification</a>
                     </div>
                     <div class="col-" style="margin-right:10px;">
-                    <a href="#" onclick="alert('Cooming Soon!');">Network</a>
+                    <a href="/network">Network</a>
                     </div>
                     <div class="col-"> 
                         <a href="/article">Article</a>

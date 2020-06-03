@@ -21,7 +21,10 @@ Route::get('/certification','CertificationController@index');
 Route::get('/certification/search/','CertificationController@pencarian');
 Route::get('/certification/{url}','CertificationController@show');
 
-Route::get('/connection', 'ConnectionController@showPeople');
+//network route
+Route::get('/network','NetworkController@index');
+Route::get('/network/search/','NetworkController@pencarian');
+Route::get('/network/{url}','NetworkController@show');
 
 Route::get('/article', function () {
     return view('article');
