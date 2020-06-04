@@ -27,7 +27,11 @@
             </form>
         </div>  
         <div class="network" style="margin-left:4%;margin-right:4%">
-        <h3 style="text-align:left;margin-top:5%;margin-bottom:2%">See what "" has been done </h3>
+        
+        @foreach ($networks as $network)
+            <h3 style="text-align:left;margin-top:5%;margin-bottom:2%">See what " {{$network->taken}} " has been done </h3>
+            @break
+        @endforeach
         <div class="row">
             @foreach ($networks as $network)
             <div class="col-sm-4">

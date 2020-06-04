@@ -12,12 +12,13 @@ class NetworkController extends Controller
         \EasyRdf_Namespace::set('s', 'http://learningsparql.com/ns/data#');
         $sparql = new \EasyRdf_Sparql_Client('http://localhost:3030/certiv/sparql');
 
-    $query = 'SELECT ?judul ?category ?tanggal ?harga ?link WHERE {'.
+    $query = 'SELECT ?judul ?category ?tanggal ?taken ?harga ?link WHERE {'.
         '?certif ab:name ?judul .'.
           '?certif	ab:category ?category . ' .
           '?certif ab:price ?harga . ' .
           '?certif ab:date ?tanggal . ' .
-          '?certif ab:url ?link ' .
+          '?certif ab:url ?link . ' .
+          '?certif ab:taken ?taken .' .
     '}';
 
         $result = $sparql->query($query);
@@ -50,12 +51,12 @@ class NetworkController extends Controller
         
         $judul = $request->judul;
              
-        $query = 'SELECT distinct ?judul  ?tanggal ?taken ?link WHERE {'.
+        $query = 'SELECT  ?judul  ?tanggal ?taken ?link WHERE {'.
               '?certif ab:name ?judul .'.
               '?certif ab:url ?link . ' .
               '?certif ab:date ?tanggal . ' .
-              '?certif ab:takenby "'.$judul.'" . ' .
               '?certif ab:takenby ?taken . ' .
+              'FILTER contains(?taken,"'.$judul.'") .'.
         '}';
         
         $result = $sparql->query($query);
