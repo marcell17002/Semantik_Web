@@ -62,24 +62,6 @@ class CertificationController extends Controller
               '?certif ab:url ?link . ' .
               '?certif ab:date ?tanggal . ' .
         '}';
-        $result = $sparql->query($query);
-        foreach($result as $res){
-        $queryRelated = 'SELECT distinct ?name ?related ?datebaru ?categorybaru ?pricebaru ?taken ?namebaru ?link'.
-            ' WHERE {'.
-            '?ab ab:name ?name. '.
-            '?ab ab:category "'.$res->category.'".'. 
-            '?ab ab:related ?related. '.
-            '?related ab:name ?namebaru. '.
-            '?related ab:date ?datebaru. '.
-            '?related ab:category ?categorybaru. '.
-            '?related ab:price ?pricebaru.' .
-            '?related ab:url ?link.' .
-            '}';
-        
-        $resultRelated = $sparql->query($queryRelated);
-            };
-
-        return view('certification', ['certifications' => $result, 'relates' => $resultRelated]);
 
         }else if ($option == 'Kategori'){
             $query = 'SELECT ?judul ?category ?tanggal ?harga ?link  WHERE {'.
@@ -90,10 +72,7 @@ class CertificationController extends Controller
                   '?certif ab:url ?link . ' .
                   '?certif ab:date ?tanggal ' .
             '}';
-
-            $result = $sparql->query($query);
-            return view('certification', ['certifications' => $result]);
-        
+           
         }else if ($option == 'Periode'){
             $query = 'SELECT ?judul ?category ?tanggal ?harga ?link  WHERE {'.
                 '?certif ab:name ?judul .'.
@@ -104,9 +83,6 @@ class CertificationController extends Controller
                   '?certif ab:date ?tanggal .'.
             '}';
 
-            $result = $sparql->query($query);
-            return view('certification', ['certifications' => $result]);
-        
         }else if ($option == 'Harga'){
             $query = 'SELECT ?judul ?category ?tanggal ?harga ?link  WHERE {'.
                 '?certif ab:name ?judul .'.
@@ -115,12 +91,29 @@ class CertificationController extends Controller
                   '?certif ab:price "'.$judul.'" . ' .
                   '?certif ab:url ?link . ' .
                   '?certif ab:date ?tanggal ' .
-            '}';
-
-            $result = $sparql->query($query);
-            return view('certification', ['certifications' => $result]);
-        
+            '}';        
         }
+
+        $result = $sparql->query($query);
+
+        foreach($result as $res){
+            $queryRelated = 'SELECT distinct ?name ?related ?datebaru ?categorybaru ?pricebaru ?taken ?namebaru ?link'.
+                ' WHERE {'.
+                '?ab ab:name ?name. '.
+                '?ab ab:category "'.$res->category.'".'. 
+                '?ab ab:related ?related. '.
+                '?related ab:name ?namebaru. '.
+                '?related ab:date ?datebaru. '.
+                '?related ab:category ?categorybaru. '.
+                '?related ab:price ?pricebaru.' .
+                '?related ab:url ?link.' .
+                '}';
+            
+            $resultRelated = $sparql->query($queryRelated); //mengambil data related
+                };
+    
+            return view('certification', ['certifications' => $result, 'relates' => $resultRelated]);
+    
        
        
         
