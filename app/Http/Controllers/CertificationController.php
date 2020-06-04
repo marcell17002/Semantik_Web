@@ -110,9 +110,13 @@ class CertificationController extends Controller
                 '}';
             
             $resultRelated = $sparql->query($queryRelated); //mengambil data related
-                };
-    
+                }
+                
+            if(isset($resultRelated)){
             return view('certification', ['certifications' => $result, 'relates' => $resultRelated]);
+            }
+            else
+            return view('certification', ['certifications' => $result]);
     
        
        

@@ -42,7 +42,11 @@
         </div>
 
              
+            @if($certifications->numRows() == 0)
+                <h2 style="text-align:center">Data Tidak Ditemukan</h2>
+            @endif
         <div class="container">
+  
             @foreach ($certifications as $certification)
                 <div class="card">
                     <img src={{asset('image/cisco.png')}} alt="Avatar" style="padding: 10px 10px;">
