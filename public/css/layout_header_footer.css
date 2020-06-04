@@ -4,19 +4,10 @@ body {
     background-color: #fafafa;
   }
   
-  .topnav {
-    overflow: hidden;
-    background-color: #fafafa;
-  }
-  
   .topnav a {
-    float: left;
     color: #1b294a;
-    text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
-    display: block;
+    font-size:16px;
   }
   
   .topnav a:hover {
@@ -37,7 +28,7 @@ body {
       padding: 25px;
     background-color: #d9d9d9;
     width: auto;
-    height: 100px;
+    height: 150px;
   }
   .sticky {
     position: fixed;
@@ -47,4 +38,30 @@ body {
   
   .sticky + .content {
     padding-top: 60px;
+  }
+
+  @media only screen and (min-width: 480px) {
+    .topnav a{
+      color: #1b294a;
+      text-decoration: none;
+      font-size:16px;
+    }
+  }
+  @media only screen and (min-width: 769px) {
+    .topnav a{
+      color: #1b294a;
+      text-decoration: none;
+      font-size:16px;
+      padding-right: 5%;
+    }
+    .topnav{
+      margin-right: 5%;
+      margin-left: 5%;
+    }
+    .topnav-1 a{
+      padding-right: 20px;
+    }
+    .footer{
+      padding-top: 3%;
+    }
   }

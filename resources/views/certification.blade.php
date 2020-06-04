@@ -20,7 +20,7 @@
         
         <div class="active-cyan-4 mb-4" style="margin-left: 20%;margin-right:20%;">
             <form action="/certification/search" method="get">
-            <div class="container" style="margin-left:2%;margin-top:2%">
+            <div class="containers" style="margin-left:2%;margin-top:2%">
                 <div class="row">   
                     <div class="col-md-8">
                         <input class="form-control" type="text" name="judul" placeholder="Search..." value="{{ old('judul') }}" >
@@ -42,17 +42,14 @@
         </div>
 
              
-        <div class ="container" style="margin-top:3%">
-            <div class ="row">
+        <div class="container">
             @foreach ($certifications as $certification)
-                <div class="col-3">
-                    <div class="card">
-                        <img src={{asset('image/cisco.png')}} alt="Avatar" style="width:100%;height:50%;padding: 10px 10px;">
-                        <div class="container1">
-                            <h4 style="text-align:center;border-top:2px;"><b>{{$certification->judul}}</b></h4> 
-                            <p style="text-align:center;">{{$certification->tanggal}}</p> 
-                            <a class="btn btn-primary" href="/certification/{{$certification->link}}" style="color : white; border-radius: 0px;width:100%; "> Apply </a>
-                        </div>
+                <div class="card">
+                    <img src={{asset('image/cisco.png')}} alt="Avatar" style="padding: 10px 10px;">
+                    <div class="container1">
+                        <h4 style="text-align:center;border-top:2px;"><b>{{$certification->judul}}</b></h4> 
+                        <p style="text-align:center;">{{$certification->tanggal}}</p> 
+                        <a class="btn btn-primary" href="/certification/{{$certification->link}}" style="color : white; border-radius: 0px;width:100%; "> Apply </a>
                     </div>
                 </div>
             @endforeach    
@@ -76,7 +73,7 @@
                     </div>
                 </div>
             @endforeach    
-         </div>
+            </div>
         </div>
             @endisset
 
