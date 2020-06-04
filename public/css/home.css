@@ -1,65 +1,5 @@
 
-  .home-1{
-      background-color: #fafafa;
-      width: auto;
-      height: 610px;
-  }
-  .content-home-gs{
-        padding-top: 30%;
-  }
-  .content-home-img{
-    padding-top: 20%;
-    padding-left: 10%;
-}
-  .home-2{
-    background-color: #ffff;
-    width: auto;
-    height: 500px;
-  }
-  .content-home-2-txt{
-      padding-top: 30%;
-  }
-  .content-home-3-txt{
-      padding-top: 5%;
-  }
-  .content-home-5-txt{
-    padding-top: 5%;
-    padding-left: 5%;
-}
-  .home-3{
-    background-color: #f2f2f2;
-    width: auto;
-    height: 500px;
-  }
-  .home-4{
-    background-color: #ffff;
-    width: auto;
-    height: 550px;
-  }
-  .home-5{
-    background-color: #f2f2f2;
-    width: auto;
-    height: 550px;
-  }
-  .home-6{
-    background-color: #ffff;
-    width: auto;
-    height: 550px;
-  }
-  .home-7{
-    background-color: #f2f2f2;
-    width: auto;
-    height: 800px;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 30px;
-  }
-  .footer{
-      padding: 25px;
-    background-color: #c1cade;
-    width: auto;
-    height: 100px;
-  }
+
   .sticky {
     position: fixed;
     top: 0;
@@ -68,4 +8,202 @@
   
   .sticky + .content {
     padding-top: 60px;
+  }
+
+  /* new */
+  .pertama{
+    box-sizing: border-box;
+    background-color: #fafafa;
+    height: 610px;
+  }
+  .pertama-left{
+    margin-left: 5%;
+  }
+  .pertama-right{
+    padding-top: 10%;
+    text-align: center;
+  }
+  .pertama-right img{
+    width: 300px;
+    height: 300px;
+  }
+
+
+  .kedua{
+    box-sizing: border-box;
+    background-color: #fff;
+    height: 610px;
+  }
+  .kedua-left{
+    margin-left: 5%;
+    padding-top: 5%;
+  }
+  .kedua-right{
+    text-align: center;
+  }
+  .kedua-right img{
+    width: 350px;
+    height: 300px;
+  }
+
+  .ketiga{
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+  }
+  .content{
+    padding:20px;
+    flex: 1;
+  }
+  
+  
+  .empat{
+    box-sizing: border-box;
+    background-color: #fff;
+    height: 680px;
+  }
+  .empat-left{
+    padding-top: 5%;
+    padding-left: 5%;
+  }
+  .empat-right{
+    text-align: center;
+    padding-left:5% ;
+    padding-right: 5%;
+  }
+  .empat-left img{
+    width: 330px;
+    height: 300px;
+  }
+
+
+  .lima{
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    height: 470px;
+  }
+  .lima-left{
+    padding-top: 5%;
+    margin-left: 5%;
+  }
+  .lima-right{
+    text-align: center;
+    padding-top:3%;
+  }
+  .lima-right img{
+    width: 300px;
+    height: 250px;
+  }
+
+  .enam{
+    margin-top: 5%;
+    height: 900px;
+  }
+  .inline-2{
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  @media only screen and (min-width: 480px) {
+    .pertama{
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    .pertama-left{
+      align-self: center;
+      
+    }
+    .pertama-right img{
+      width: 400px;
+      height: 400px;
+    }
+
+    .kedua{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .kedua-left{
+      padding-left:8%;
+      align-self: center;
+      
+    }
+    .kedua-right{
+      padding-right: 8%;
+    }
+    .kedua-right img{
+      width: 500px;
+      height: 400px;
+    }
+
+    .ketiga{
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-left: 150px;
+      padding-right: 150px;
+      height: 400px;
+    }
+    .inline{
+      background-color: #f2f2f2;
+      padding-top: 20px;
+    }
+    .content{
+      margin-top: 4%;
+    }
+
+    
+    .inline-1{
+      background-color: #ffff;
+      padding-top: 50px;
+    }
+    .empat{
+      display: flex;
+      align-items: center;
+      padding-bottom: 5%;
+      height: 450px;
+    }
+    .empat-left{
+      padding-left:8%;
+      align-self: center;
+      
+    }
+    .empat-right{
+      padding-right: 8%;
+      padding-left: 5%;
+    }
+    .empat-left img{
+      width: 500px;
+      height: 400px;
+    }
+
+    .lima{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .lima-left{
+      align-self: center;
+    }
+    .lima-right{
+      padding-right: 5%;
+    }
+    .lima-right img{
+      width: 500px;
+      height: 400px;
+    }
+
+    .enam{
+      display: flex;
+      height: 690px;
+    }
+    .inline-2{
+      background-color: #f2f2f2;
+      padding-top: 50px;
+      padding-left: 35%;
+      padding-right: 35%;
+      height: 860px;
+    }
   }
