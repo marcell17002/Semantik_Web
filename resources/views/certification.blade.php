@@ -61,7 +61,7 @@
         </div>
 
             @isset($relates)
-        <h3 style="text-align:center;margin-top:5%">Related Topics </3>
+        <h3 style="text-align:center;margin-top:5%">Related Topics </h3>
        
         <div class ="container">
             @foreach ($relates as $relateTo)

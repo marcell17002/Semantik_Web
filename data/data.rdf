@@ -1,37 +1,106 @@
-@prefix ab:    <http://learningsparql.com/ns/certification#> .
-@prefix s:     <http://learningsparql.com/ns/data#> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-
-s:i0a1  ab:category  "Network" ;
-        ab:date      "October" ;
-        ab:name      "Cisco" ;
-        ab:price     "190000" ;
-        ab:takenby   "http://learningsparql.com/ns/data#take35" ;
-        ab:url       "cisco" .
-
-s:take34  ab:user  "Marcell Antonius" .
-
-s:take35  ab:user  "Nando Rafi C" .
-
-s:i0b1  ab:category  "IT" ;
-        ab:date      "October" ;
-        ab:name      "Java Language" ;
-        ab:price     "25000" ;
-        ab:takenby   "" ;
-        ab:url       "java" .
-
-s:i0a2  ab:category  "Network" ;
-        ab:date      "September" ;
-        ab:name      "CCNA" ;
-        ab:price     "250000" ;
-        ab:takenby   "http://learningsparql.com/ns/data#take36" ;
-        ab:url       "ccna" .
-
-s:take36  ab:user  "Asep Mul" .
-
-s:i001  ab:category  "English" ;
-        ab:date      "August" ;
-        ab:name      "Toefl" ;
-        ab:price     "40000" ;
-        ab:takenby   "http://learningsparql.com/ns/data#take34" , "http://learningsparql.com/ns/data#take36" ;
-        ab:url       "toefl" .
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ab="http://learningsparql.com/ns/certification#"
+    xmlns:s="http://learningsparql.com/ns/data#" > 
+  <rdf:Description rdf:about="http://learningsparql.com/ns/data#i002">
+    <ab:category>English</ab:category>
+    <ab:takenby>Hans Irawan</ab:takenby>
+    <ab:date>November</ab:date>
+    <ab:related rdf:resource="http://learningsparql.com/ns/data#i001"/>
+    <ab:takenby>Marcell Antonius</ab:takenby>
+    <ab:takenby>Jessica</ab:takenby>
+    <ab:price>56000</ab:price>
+    <ab:url>ielts</ab:url>
+    <ab:name>IELTS</ab:name>
+    <ab:takenby>Nando Rafi C</ab:takenby>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://learningsparql.com/ns/data#i003">
+    <ab:takenby>Marcell Antonius</ab:takenby>
+    <ab:category>Code</ab:category>
+    <ab:related rdf:resource="http://learningsparql.com/ns/data#i0b1"/>
+    <ab:takenby>Nando Rafi C</ab:takenby>
+    <ab:url>kotlin</ab:url>
+    <ab:related rdf:resource="http://learningsparql.com/ns/data#i004"/>
+    <ab:price>10000</ab:price>
+    <ab:date>January</ab:date>
+    <ab:takenby>Ucok</ab:takenby>
+    <ab:name>Kotlin : Front End </ab:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://learningsparql.com/ns/data#i0a1">
+    <ab:takenby>Verina Putri</ab:takenby>
+    <ab:price>190000</ab:price>
+    <ab:name>Cisco</ab:name>
+    <ab:related rdf:resource="http://learningsparql.com/ns/data#i0a2"/>
+    <ab:takenby>Hans Irawan</ab:takenby>
+    <ab:takenby>Dani Gunawan</ab:takenby>
+    <ab:date>October</ab:date>
+    <ab:url>cisco</ab:url>
+    <ab:takenby>Dicky Wijaya</ab:takenby>
+    <ab:category>Network</ab:category>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://learningsparql.com/ns/data#i001">
+    <ab:takenby>Dimas Satria</ab:takenby>
+    <ab:related rdf:resource="http://learningsparql.com/ns/data#i002"/>
+    <ab:takenby>Marcell Antonius</ab:takenby>
+    <ab:takenby>Nando Rafi C</ab:takenby>
+    <ab:date>August</ab:date>
+    <ab:category>English</ab:category>
+    <ab:name>Toefl</ab:name>
+    <ab:url>toefl</ab:url>
+    <ab:takenby>Ucok</ab:takenby>
+    <ab:price>40000</ab:price>
+    <ab:takenby>Fadhil Nugroho</ab:takenby>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://learningsparql.com/ns/data#i0a2">
+    <ab:related rdf:resource="http://learningsparql.com/ns/data#i0a1"/>
+    <ab:price>250000</ab:price>
+    <ab:category>Network</ab:category>
+    <ab:name>CCNA</ab:name>
+    <ab:url>ccna</ab:url>
+    <ab:takenby>Ibnu Kusuma</ab:takenby>
+    <ab:takenby>Dede Kurniasih</ab:takenby>
+    <ab:takenby>Mutia Karimah</ab:takenby>
+    <ab:date>September</ab:date>
+    <ab:takenby>Marcell Antonius</ab:takenby>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://learningsparql.com/ns/data#i006">
+    <ab:related rdf:resource="http://learningsparql.com/ns/data#i005"/>
+    <ab:takenby>Nando Rafi C</ab:takenby>
+    <ab:takenby>Marcell Antonius</ab:takenby>
+    <ab:url>e-commerce</ab:url>
+    <ab:price>1000000</ab:price>
+    <ab:name>Responsfull E-commerce</ab:name>
+    <ab:date>March</ab:date>
+    <ab:category>Business</ab:category>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://learningsparql.com/ns/data#i004">
+    <ab:related rdf:resource="http://learningsparql.com/ns/data#i0b1"/>
+    <ab:takenby>Marcell Antonius</ab:takenby>
+    <ab:url>golang</ab:url>
+    <ab:price>FREE</ab:price>
+    <ab:name>GoLang</ab:name>
+    <ab:date>January</ab:date>
+    <ab:category>Code</ab:category>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://learningsparql.com/ns/data#i005">
+    <ab:related rdf:resource="http://learningsparql.com/ns/data#i006"/>
+    <ab:takenby>Nando Rafi C</ab:takenby>
+    <ab:takenby>Ucok</ab:takenby>
+    <ab:url>Business</ab:url>
+    <ab:price>FREE</ab:price>
+    <ab:name>Online Business</ab:name>
+    <ab:date>March</ab:date>
+    <ab:category>Business</ab:category>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://learningsparql.com/ns/data#i0b1">
+    <ab:takenby>Tiffany Valeria</ab:takenby>
+    <ab:takenby>Rafi Chandra</ab:takenby>
+    <ab:takenby>Marcell Antonius</ab:takenby>
+    <ab:takenby>Hans Irawan</ab:takenby>
+    <ab:url>java</ab:url>
+    <ab:price>25000</ab:price>
+    <ab:name>Java Language</ab:name>
+    <ab:date>October</ab:date>
+    <ab:category>Code</ab:category>
+  </rdf:Description>
+</rdf:RDF>

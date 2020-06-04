@@ -97,16 +97,17 @@ class CertificationController extends Controller
         $result = $sparql->query($query);
 
         foreach($result as $res){
-            $queryRelated = 'SELECT distinct ?name ?related ?datebaru ?categorybaru ?pricebaru ?taken ?namebaru ?link'.
+            $queryRelated = 'SELECT distinct ?name ?related ?datebaru ?category ?categorybaru ?pricebaru ?taken ?namebaru ?link'.
                 ' WHERE {'.
                 '?ab ab:name ?name. '.
-                '?ab ab:category "'.$res->category.'".'. 
+                '?ab ab:category ?category.'. 
                 '?ab ab:related ?related. '.
                 '?related ab:name ?namebaru. '.
                 '?related ab:date ?datebaru. '.
                 '?related ab:category ?categorybaru. '.
                 '?related ab:price ?pricebaru.' .
                 '?related ab:url ?link.' .
+                'FILTER contains(?category,"'.$res->category.'") .'.
                 '}';
             
             $resultRelated = $sparql->query($queryRelated); //mengambil data related

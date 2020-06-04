@@ -107,10 +107,7 @@ s:i006 ab:related s:i005 .
 #Code
 s:i003 ab:related s:i004.
 s:i003 ab:related s:i0b1.
-s:i004 ab:related s:i003.
 s:i004 ab:related s:i0b1.
-s:i0b1 ab:related s:i003.
-s:i0b1 ab:related s:i004.
 
 #Network
 s:i0a1 ab:related s:i0a2.
