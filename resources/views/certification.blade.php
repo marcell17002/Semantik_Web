@@ -64,9 +64,9 @@
             <div class="card">
                     <img src={{asset('image/cisco.png')}} alt="Avatar" style="padding: 10px 10px;">
                     <div class="container1">
-                        <h4 style="text-align:center;border-top:2px;"><b>{{$certification->judul}}</b></h4> 
-                        <p style="text-align:center;">{{$certification->tanggal}}</p> 
-                        <a class="btn btn-primary" href="/certification/{{$certification->link}}" style="color : white; border-radius: 0px;width:100%; "> Apply </a>
+                        <h4 style="text-align:center;border-top:2px;"><b>{{$relateTo->namebaru}}</b></h4> 
+                        <p style="text-align:center;">{{$relateTo->datebaru}}</p> 
+                        <a class="btn btn-primary" href="/certification/{{$relateTo->link}}" style="color : white; border-radius: 0px;width:100%; "> Apply </a>
                     </div>
                 </div>
             @endforeach    
