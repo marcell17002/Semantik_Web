@@ -46,6 +46,7 @@ class CertificationController extends Controller
     public function pencarian(Request $request){
         \EasyRdf_Namespace::set('ab', 'http://learningsparql.com/ns/certification#');
         \EasyRdf_Namespace::set('s', 'http://learningsparql.com/ns/data#');
+        \EasyRdf_Namespace::set('rdf', '<http://www.w3.org/1999/02/22-rdf-syntax-ns#>');
         $sparql = new \EasyRdf_Sparql_Client('http://localhost:3030/certiv/sparql');
         
         $judul = $request->judul;
@@ -61,9 +62,24 @@ class CertificationController extends Controller
               '?certif ab:url ?link . ' .
               '?certif ab:date ?tanggal . ' .
         '}';
-        
         $result = $sparql->query($query);
-        return view('certification', ['certifications' => $result]);
+        foreach($result as $res){
+        $queryRelated = 'SELECT distinct ?name ?related ?datebaru ?categorybaru ?pricebaru ?taken ?namebaru ?link'.
+            ' WHERE {'.
+            '?ab ab:name ?name. '.
+            '?ab ab:category "'.$res->category.'".'. 
+            '?ab ab:related ?related. '.
+            '?related ab:name ?namebaru. '.
+            '?related ab:date ?datebaru. '.
+            '?related ab:category ?categorybaru. '.
+            '?related ab:price ?pricebaru.' .
+            '?related ab:url ?link.' .
+            '}';
+        
+        $resultRelated = $sparql->query($queryRelated);
+            };
+
+        return view('certification', ['certifications' => $result, 'relates' => $resultRelated]);
 
         }else if ($option == 'Kategori'){
             $query = 'SELECT ?judul ?category ?tanggal ?harga ?link  WHERE {'.

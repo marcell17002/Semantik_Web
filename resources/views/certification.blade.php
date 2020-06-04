@@ -59,23 +59,26 @@
             </div>
         </div>
 
+            @isset($relates)
         <h3 style="text-align:center;margin-top:5%">Related Topics </3>
+       
         <div class ="container" style="margin-top:3%;margin-bottom:5%">
             <div class ="row">
-            @foreach ($certifications as $certification)
+            @foreach ($relates as $relateTo)
                 <div class="col-3">
                     <div class="card">
                         <img src={{asset('image/cisco.png')}} alt="Avatar" style="width:100%;height:50%;padding: 10px 10px;">
                         <div class="container1">
-                            <h4 style="text-align:center;border-top:2px;"><b>{{$certification->judul}}</b></h4> 
-                            <p style="text-align:center;">{{$certification->tanggal}}</p> 
-                            <a class="btn btn-primary" href="/certification/{{$certification->link}}" style="color : white; border-radius: 0px;width:100%; "> Apply </a>
+                            <h4 style="text-align:center;border-top:2px;"><b>{{$relateTo->namebaru}}</b></h4> 
+                            <p style="text-align:center;">{{$relateTo->datebaru}}</p> 
+                            <a class="btn btn-primary" href="/certification/{{$relateTo->link}}" style="color : white; border-radius: 0px;width:100%; "> Apply </a>
                         </div>
                     </div>
                 </div>
             @endforeach    
          </div>
         </div>
+            @endisset
 
         @include('includes/footer')
     </body>
