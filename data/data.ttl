@@ -117,5 +117,10 @@ s:i0a2 ab:related s:i0a1.
 s:i001 ab:related s:i002.
 s:i002 ab:related s:i001.
 
+#diikuti
+s:t001  ab:user  "Marcell Antonius" .
+s:t002  ab:user  "Jessica" .
+s:t003  ab:user  "Imron" .
 
+s:i007  ab:takenby   s:t001 , s:t002 , s:t003 .
 

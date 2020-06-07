@@ -60,7 +60,7 @@
             </div>
         </div>
 
-            @isset($relates)
+        @isset($relates)
         <h3 style="text-align:center;margin-top:5%">Related Topics </h3>
        
         <div class ="container">
@@ -70,6 +70,26 @@
                     <div class="container1">
                         <h4 style="text-align:center;border-top:2px;"><b>{{$relateTo->namebaru}}</b></h4> 
                         <p style="text-align:center;">{{$relateTo->datebaru}}</p> 
+                        <a class="btn btn-primary" href="/certification/{{$relateTo->link}}" style="color : white; border-radius: 0px;width:100%; "> Apply </a>
+                    </div>
+                </div>
+            @endforeach    
+            </div>
+        </div>
+            @endisset
+
+            @isset($relates1)
+        <h3 style="text-align:center;margin-top:5%">Diikuti oleh  </h3>
+       
+        <div class ="container">
+            @foreach ($relates1 as $relateTo)
+            <div class="card">
+                    <img src={{asset('image/cisco.png')}} alt="Avatar" style="padding: 10px 10px;">
+                    <div class="container1">
+                        <h4 style="text-align:center;border-top:2px;"><b>{{$relateTo->name}}</b></h4> 
+                        <p style="text-align:center;">{{$relateTo->datebaru}}</p>
+                        <h6 style="text-align:center"> Diikuti Oleh </h6> 
+                        <p style="text-align:center;">{{$relateTo->namebaru}}</p> 
                         <a class="btn btn-primary" href="/certification/{{$relateTo->link}}" style="color : white; border-radius: 0px;width:100%; "> Apply </a>
                     </div>
                 </div>
