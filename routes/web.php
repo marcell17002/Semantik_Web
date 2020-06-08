@@ -26,10 +26,12 @@ Route::get('/network','NetworkController@index');
 Route::get('/network/search/','NetworkController@pencarian');
 Route::get('/network/{url}','NetworkController@show');
 
-Route::get('/article', function () {
-    return view('article');
-});
+Route::get('/article', 'ArticleController@index');
 
-Route::get('/article-pick', function () {
-    return view('article-pick');
+Route::get('/article/{url}', 'ArticleController@showArticle');
+
+//article input
+Route::get('/inputArticle' ,function(){
+    return view('article-input');
 });
+Route::post('/inputArticle', 'ArticleInputController@input');

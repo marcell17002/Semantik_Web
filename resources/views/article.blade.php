@@ -63,16 +63,18 @@
         
         <div class="container">
         <div class="row">
+            @foreach($articles as $article)
             <div class="col-3">
                 <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{asset('image/jobhunt.jpg')}}" alt="Card image cap">
+                    <img class="card-img-top" src="{{asset('image/jobhunt.jpg')}}" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Tips Membuat CV</h5>
-                    <p class="card-text">Pernahkah anda merasa kesulitan atau bingung perbedaan antara CV dan Resume? So let's check this out!.</p>
-                    <a href="/article-pick" class="btn btn-primary">See More</a>
+                    <h5 class="card-title">{{$article->judul}}</h5>
+                    <p class="card-text">{{$article->header}}</p>
+                    <a href="/{{article/$article->url}}" class="btn btn-primary">See More</a>
                 </div>
                 </div>
             </div>
+            @endforeach
             <div class="col-3">
                 <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="{{asset('image/jobhunt.jpg')}}" alt="Card image cap">
