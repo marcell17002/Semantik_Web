@@ -10,7 +10,7 @@ class NetworkController extends Controller
     public function index(){
         \EasyRdf_Namespace::set('ab', 'http://learningsparql.com/ns/certification#');
         \EasyRdf_Namespace::set('s', 'http://learningsparql.com/ns/data#');
-        $sparql = new \EasyRdf_Sparql_Client('http://localhost:3030/certiv/sparql');
+        $sparql = new \EasyRdf_Sparql_Client('https://qrary-fuseki-service.herokuapp.com/certiv/sparql');
 
     $query = 'SELECT ?judul ?category ?tanggal ?taken ?harga ?link WHERE {'.
         '?certif ab:name ?judul .'.
@@ -29,7 +29,7 @@ class NetworkController extends Controller
         \EasyRdf_Namespace::set('ab', 'http://learningsparql.com/ns/certification#');
         \EasyRdf_Namespace::set('s', 'http://learningsparql.com/ns/data#');
 
-        $sparql = new \EasyRdf_Sparql_Client('http://localhost:3030/certiv/sparql');
+        $sparql = new \EasyRdf_Sparql_Client('https://qrary-fuseki-service.herokuapp.com/certiv/sparql');
 
         $query = 'SELECT ?certif ?judul ?category ?tanggal ?harga WHERE {'.
             '?certif ab:url "'.$url.'" .'.
@@ -47,7 +47,7 @@ class NetworkController extends Controller
     public function pencarian(Request $request){
         \EasyRdf_Namespace::set('ab', 'http://learningsparql.com/ns/certification#');
         \EasyRdf_Namespace::set('s', 'http://learningsparql.com/ns/data#');
-        $sparql = new \EasyRdf_Sparql_Client('http://localhost:3030/certiv/sparql');
+        $sparql = new \EasyRdf_Sparql_Client('https://qrary-fuseki-service.herokuapp.com/certiv/sparql');
         
         $judul = $request->judul;
              
