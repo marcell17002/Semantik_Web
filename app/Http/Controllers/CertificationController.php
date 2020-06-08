@@ -123,18 +123,15 @@ class CertificationController extends Controller
                 '?ab ab:takenby ?takenby. '.
                 '?ab ab:url ?link .'.
                 '?takenby ab:user ?namebaru. '.
-                'FILTER contains(?name,"'.$res->category.'") .'.
+                
                 '}';
             
             $resultRelated1 = $sparql->query($queryRelated); //mengambil data related
                 }
-                
-            if(isset($resultRelated)){
-                return view('certification', ['certifications' => $result, 'relates' => $resultRelated]);
-            }else if (iseet($resultRelated1)){
-                return view('certification', ['certifications' => $result, 'relates1' => $resultRelated1]);
+                if(isset($resultRelated)){
+                    return view('certification', ['certifications' => $result, 'relates' => $resultRelated, 'relates1' => $resultRelated1]);
             }
-            else
+              else
             return view('certification', ['certifications' => $result]);
     
        

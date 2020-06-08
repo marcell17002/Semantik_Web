@@ -15,7 +15,6 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/certification.css') }}" />
     </head>
     <body>
-        
         @include('includes.header')
         
         <div class="active-cyan-4 mb-4" style="margin-left: 20%;margin-right:20%;">
