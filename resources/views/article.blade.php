@@ -70,41 +70,12 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$article->judul}}</h5>
                     <p class="card-text">{{$article->header}}</p>
-                    <a href="/{{article/$article->url}}" class="btn btn-primary">See More</a>
+                    <a href="/article/{{$article->url}}" class="btn btn-primary">See More</a>
                 </div>
                 </div>
             </div>
             @endforeach
-            <div class="col-3">
-                <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{asset('image/jobhunt.jpg')}}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Trick Tepat Wawancara</h5>
-                    <p class="card-text">Kmu pasti bingung trick yang tepat untuk wawancara. Coba klik dan dapatkan informasi menarikmu. Jangan sampai ketinggalan ya!</p>
-                    <a href="/article-pick" class="btn btn-primary">See More</a>
-                </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{asset('image/jobhunt.jpg')}}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Pentingnya Sertifikasi Bagi Fresh Graduate</h5>
-                    <p class="card-text">Kmu pasti bingung trick yang tepat untuk wawancara. Coba klik article ini untuk paham lebih jauh.</p>
-                    <a href="/article-pick" class="btn btn-primary">See More</a>
-                </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{asset('image/jobhunt.jpg')}}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Perbanyak Koneksi!</h5>
-                    <p class="card-text">Yang pinter mungkin kalah sama orang dalem lho! Coba klik dan baca artikelnya. Jangan sampai ketinggalan ya!</p>
-                    <a href="/article-pick" class="btn btn-primary">See More</a>
-                </div>
-                </div>
-            </div>
+            
         </div>
 
         </div>
